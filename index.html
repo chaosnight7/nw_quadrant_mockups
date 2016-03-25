@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demos</title>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="tiles.css" />
+
+    <script type="text/javascript">
+        // debounce utility from underscorejs.org
+        var debounce = function(func, wait, immediate) {
+            var timeout;
+            return function() {
+                var context = this, args = arguments;
+                var later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                if (immediate && !timeout) func.apply(context, args);
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        };
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <script src="tile_engine.js"></script>
+
+    <script src="tiles.js"></script>
+</head>
+<body>
+
+<div class="grid-wrap">
+    <div id="main-grid" class="grid"></div>
+</div>
+
+</body>
+</html>
