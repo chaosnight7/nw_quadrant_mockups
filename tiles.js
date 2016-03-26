@@ -113,10 +113,11 @@ var TemplateRows = [
         " C D D ",
         " C D D ",
         " F F . ",
-        " . . . ",
-        " G G H ",
-        " G G H ",
-        " . . . "
+        " . G G ",
+        " H H I ",
+        " H H I ",
+        " J K K ",
+        " J L L "
     ], [
         " A A B B ",
         " A A C C ",
