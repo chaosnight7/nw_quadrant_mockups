@@ -1,0 +1,133 @@
+html {
+    overflow-y: scroll;
+}
+
+body {
+    padding: 20px;
+    font-family: "Helvetica Neue", "Arial", sans-serif;
+    color: #100072;
+}
+
+.grid {
+    width: 95%;
+    height: 600px;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #212121;
+    margin: 10px 0px;
+    border: 4px solid #212121;
+    clear: both;
+}
+
+.grid > div {
+    background-color: #fff;
+    position: absolute;
+
+    -webkit-transition: background-color .15s ease-out;
+    -moz-transition: background-color .15s ease-out;
+    -o-transition: background-color .15s ease-out;
+    transition: background-color .15s ease-out;
+}
+.grid > div:hover {
+    background-color: #eeeeee;
+}
+
+/* TODO */
+.grid.has-active-tile > div {
+    background-color: #ddd;
+}
+.grid.has-active-tile > div.active-tile {
+    background-color: #fff;
+}
+
+#tile-close-button {
+    float: right;
+    padding-right: 1rem;
+    color: #ddd;
+
+    -webkit-animation: fadeIn 400ms;
+    -moz-animation: fadeIn 400ms;
+    animation: fadeIn 400ms;
+}
+
+.dev-tile-number {
+    font-size: 2rem;
+    padding: 2rem 1rem;
+    font-weight: bold;
+
+    -webkit-transition: background-color .3s ease-out, color .3s ease-out;
+    -moz-transition: background-color .3s ease-out, color .3s ease-out;
+    -o-transition: background-color .3s ease-out, color .3s ease-out;
+    transition: background-color .3s ease-out, color .3s ease-out;
+}
+
+.grid.has-active-tile > div.active-tile .dev-tile-number {
+    background-color: #100072;
+    color: #ddd;
+}
+
+.dev-tile-content {
+    font-size: 1rem;
+    padding: 1rem;
+    font-weight: normal;
+    margin-right: 4px;  /* hacky/quick, this is the border width on the right edge of the grid */
+    overflow-y: auto;
+    height: 80%;  /* this is a wild guess, and will be changed to an exact value in the js */
+
+    -webkit-animation: fadeIn 400ms;
+    -moz-animation: fadeIn 400ms;
+    animation: fadeIn 400ms;
+}
+
+
+/* media queries */
+@media (max-width: 1280px) {
+    .dev-tile-number {
+        font-size: 1.8rem;
+    }
+}
+@media (max-width: 900px) {
+    .dev-tile-number {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 600px) {
+    .dev-tile-number {
+        font-size: 1.25rem;
+    }
+}
+@media (max-width: 480px) {
+    .dev-tile-number {
+        font-size: 1.2rem;
+    }
+}
+
+/* CSS animations */
+@-moz-keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+@keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+@-moz-keyframes fadeOut {
+    from {opacity:1;}
+    to {opacity:0;}
+}
+
+@-webkit-keyframes fadeOut {
+    from {opacity:1;}
+    to {opacity:0;}
+}
+@keyframes fadeOut {
+    from {opacity:1;}
+    to {opacity:0;}
+}
