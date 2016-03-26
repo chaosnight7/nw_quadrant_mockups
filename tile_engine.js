@@ -84,11 +84,9 @@ var Tiles = {};
             validateChangesAndComplete = function() {
                 var el = tile.$el[0];
                 if (tile.left !== el.offsetLeft) {
-                    //console.log ('mismatch left:' + tile.left + ' actual:' + el.offsetLeft + ' id:' + tile.id);
                     tile.$el.css('left', tile.left);
                 }
                 if (tile.top !== el.offsetTop) {
-                    //console.log ('mismatch top:' + tile.top + ' actual:' + el.offsetTop + ' id:' + tile.id);
                     tile.$el.css('top', tile.top);
                 }
 
@@ -450,7 +448,6 @@ Tiles.UniformTemplates = {
             index = $.inArray(tile.id, newTileIds);
             if (index < 0) {
                 this.tilesRemoved.push(tile);
-                //console.log('Removing tile: ' + tile.id)
             }
             else {
                 newTiles[index] = tile;
@@ -475,7 +472,6 @@ Tiles.UniformTemplates = {
 
                     // skip the tile if it couldn't be created
                     if (!tile) {
-                        //console.log('Tile element could not be created, id: ' + tileId);
                         continue;
                     }
 
@@ -486,7 +482,6 @@ Tiles.UniformTemplates = {
 
                 // add tiles to queue (will be appended to DOM during redraw)
                 this.tilesAdded.push(tile);
-                //console.log('Adding tile: ' + tile.id);
             }
 
             this.tiles.push(tile);
