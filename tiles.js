@@ -113,10 +113,11 @@ var TemplateRows = [
         " C D D ",
         " C D D ",
         " F F . ",
-        " . . . ",
-        " G G H ",
-        " G G H ",
-        " . . . "
+        " . G G ",
+        " H H I ",
+        " H H I ",
+        " J K K ",
+        " J L L "
     ], [
         " A A B B ",
         " A A C C ",
@@ -157,7 +158,6 @@ $(function() {
     // wait until users finishes resizing the browser
     var debouncedResize = debounce(function() {
 
-        console.log('starting resize');
         //check browser width and switch templates accordingly.
         var width = $(window).width(), templateIndex;
         if (width <= 525) {
@@ -186,8 +186,6 @@ $(function() {
 
             //65 is the ASCII code for capital-A
             runningCharCode = 65;
-
-            console.log('tile is expanded');
 
             for (i = 0; i < beforeWholeRows; i++) {
                 row = '';
@@ -262,9 +260,7 @@ $(function() {
 
             //rebuild the custom grid template
             // set the new template and resize the grid
-            console.log(TemporaryTemplateRows);
             grid.template = Tiles.Template.fromJSON(TemporaryTemplateRows);
-            console.log(grid.template);
         }
 
         grid.isDirty = true;
@@ -292,7 +288,6 @@ $(function() {
             //to the height of the tile - the height of the title question at the top,
             //so that its scrollbar fits inside the box.
             if ($('.grid').hasClass('has-active-tile')) {
-                console.log('ballsy');
                 $('.dev-tile-content').outerHeight($('.active-tile').height() - $('.dev-tile-number').outerHeight());
             }
         });
@@ -307,15 +302,9 @@ $(function() {
 
     //Click grid items
     $('.grid').on('click', 'div', function (e) {
-
-        var asdf = debounce(function(that) {
-            console.log(that);
-            console.log(that.hasClass('dev-tile-number'));
-            console.log(that.find('#tile-close-button').length > 0);
-            console.log(that.hasClass('dev-tile-number') && that.find('#tile-close-button').length > 0);
-
+        //still playing around to see if this debounce is necessary.
+        var alterTemplate = debounce(function(that) {
             if (that.hasClass('grid-tile')) {
-                console.log('in grid-tile');
                 if (tileExpanded == -1) {
                     //register the expanded tile
                     tileExpanded = that.attr('data-tile-id');
@@ -333,17 +322,15 @@ $(function() {
                 }
             }
             else if (that.hasClass('dev-tile-number') && that.find('#tile-close-button').length > 0) {
-                console.log('x button');
                 switchToDefaultTemplate();
                 e.stopPropagation();  // hacky but necessary for the x-button to work without being immediately reversed
             }
         }, 400, true);
 
-        asdf($(this));
+        alterTemplate($(this));
     });
 
     function switchToDefaultTemplate() {
-        console.log('switching back');
         $('.grid').removeClass('has-active-tile');
         $('.grid > .active-tile').removeClass('active-tile');
         //$('#tile-close-button').remove();
