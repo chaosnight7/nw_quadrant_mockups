@@ -185,23 +185,23 @@ $(function() {
             var afterPartialtiles = numAftertiles % grid.template.numCols;
 
             //65 is the ASCII code for capital-A
-            runningCharCode = 65;
+            var runningCharCode = 65;
 
-            for (i = 0; i < beforeWholeRows; i++) {
-                row = '';
-                for (j = 0; j < grid.template.numCols; j++) {
+            for (var i = 0; i < beforeWholeRows; i++) {
+                var row = '';
+                for (var j = 0; j < grid.template.numCols; j++) {
                     row += '. ';
                 }
                 TemporaryTemplateRows.push(row);
             }
 
             if (beforePartialtiles > 0) {
-                baseWidth = Math.floor(grid.template.numCols / beforePartialtiles);
-                extraSpots = grid.template.numCols % beforePartialtiles;
-                row = '';
-                for (i = 0; i < beforePartialtiles; i++) {
-                    amt = baseWidth;
-                    tileToPush = '';
+                var baseWidth = Math.floor(grid.template.numCols / beforePartialtiles);
+                var extraSpots = grid.template.numCols % beforePartialtiles;
+                var row = '';
+                for (var i = 0; i < beforePartialtiles; i++) {
+                    var amt = baseWidth;
+                    var tileToPush = '';
                     if (extraSpots > 0) {
                         amt = baseWidth + 1;
                         extraSpots--;
@@ -219,29 +219,29 @@ $(function() {
             }
 
             //push the active tile here, and make it multiple rows
-            activetileRow = '';
-            for (i = 0; i < grid.template.numCols; i++) {
+            var activetileRow = '';
+            for (var i = 0; i < grid.template.numCols; i++) {
                 activetileRow += 'Z ';
             }
             TemporaryTemplateRows.push(activetileRow);
             TemporaryTemplateRows.push(activetileRow);
             TemporaryTemplateRows.push(activetileRow);
 
-            for (i = 0; i < afterWholeRows; i++) {
-                row = '';
-                for (j = 0; j < grid.template.numCols; j++) {
+            for (var i = 0; i < afterWholeRows; i++) {
+                var row = '';
+                for (var j = 0; j < grid.template.numCols; j++) {
                     row += '. ';
                 }
                 TemporaryTemplateRows.push(row);
             }
 
             if (afterPartialtiles > 0) {
-                baseWidth = Math.floor(grid.template.numCols / afterPartialtiles);
-                extraSpots = grid.template.numCols % afterPartialtiles;
-                row = '';
-                for (i = 0; i < afterPartialtiles; i++) {
-                    amt = baseWidth;
-                    tileToPush = '';
+                var baseWidth = Math.floor(grid.template.numCols / afterPartialtiles);
+                var extraSpots = grid.template.numCols % afterPartialtiles;
+                var row = '';
+                for (var i = 0; i < afterPartialtiles; i++) {
+                    var amt = baseWidth;
+                    var tileToPush = '';
                     if (extraSpots > 0) {
                         amt = baseWidth + 1;
                         extraSpots--;
@@ -333,17 +333,8 @@ $(function() {
     function switchToDefaultTemplate() {
         $('.grid').removeClass('has-active-tile');
         $('.grid > .active-tile').removeClass('active-tile');
-        //$('#tile-close-button').remove();
-        //$('.dev-tile-content').remove();
-
-        $('#tile-close-button').css('-webkit-animation', 'fadeOut 100ms');
-        $('#tile-close-button').bind('webkitAnimationEnd',function(){
-            $('#tile-close-button').remove();
-        });
-        $('.dev-tile-content').css('-webkit-animation', 'fadeOut 100ms');
-        $('.dev-tile-content').bind('webkitAnimationEnd',function(){
-            $('.dev-tile-content').remove();
-        });
+        $('#tile-close-button').remove();
+        $('.dev-tile-content').remove();
 
         tileExpanded = -1;
         debouncedResize();
