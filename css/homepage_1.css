@@ -101,6 +101,9 @@ body {
     .dev-tile-number {
         font-size: 1rem;
     }
+    .grid > div:hover {
+        background-color: #ffffff;
+    }
 }
 
 /* CSS animations */
