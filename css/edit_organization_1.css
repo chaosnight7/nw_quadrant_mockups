@@ -1,0 +1,37 @@
+body {
+    font-family: "Helvetica Neue", "Arial", sans-serif;
+}
+
+.main-wrap {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+}
+
+input {
+    width: 100%;
+    padding: .5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+input.btn-1 {
+    width: 25%;
+    min-width: 100px;
+    margin-top: 1rem;
+    background-color: white;
+    border: 1px solid #212121;
+    float: right;
+}
+input.btn-1:hover {
+    background-color: #212121;
+    color: white;
+
+    -webkit-transition: background-color .15s ease, color .15s ease;
+    -moz-transition: background-color .15s ease, color .15s ease;
+    -o-transition: background-color .15s ease, color .15s ease;
+    transition: background-color .15s ease, color .15s ease;
+}
