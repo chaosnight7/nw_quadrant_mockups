@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Your Organization | NorthWest Quadrant</title>
+
+    <link rel="stylesheet" href="../css/edit_organization_1.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- TODO: if we end up using tinyMCE, we should include source files in this project instead of relying on the CDN. -->
+    <script src='https://cdn.tinymce.com/4/tinymce.min.js'></script>
+    <script>tinymce.init({
+        selector:'#edit-organization-info',
+        menubar: false,
+        toolbar: 'undo, redo, bold, italic, underline, strikethrough, subscript, superscript, removeformat, formats'
+    });</script>
+</head>
+<body>
+
+<div class="main-wrap">
+    <h1>Edit your organization</h1>
+    <form class="info-form" method="post" action="edit_organization_1.html" onsubmit="formSubmitted()">
+        <input type="text" name="name" placeholder="Organization Name" /><br>
+        <input type="text" name="address" placeholder="Your main address" /><br>
+        <textarea name="info" id="edit-organization-info" rows="12"></textarea>
+        <input type="submit" class="btn-1" value="Save" />
+    </form>
+</div>
+
+<script>
+    function formSubmitted() {
+        //TODO: this is the HTML output of the editor.  This should be sanitized somehow before submitting.
+        console.log(tinyMCE.get('edit-organization-info').contentDocument.body.innerHTML);
+    }
+</script>
+
+</body>
+</html>
