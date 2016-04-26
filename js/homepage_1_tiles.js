@@ -8,11 +8,11 @@ var TILE_IDS =
 //  the last ones won't display, too few and an error will throw.
 var TILE_TEXT = {
     0: {
-        "title": "Are you hungry?",
+        "title": "NW-Project Questionaire"",
         "content": "asdf <strong>this is bold</strong>"
     },
     1: {
-        "title": "Need transportation?",
+        "title": "Do you get food to eat every night for dinner?",
         "content":
             "<h3>asdf: scroll</h3>" +
             "<p>testing</p>" +
@@ -55,53 +55,41 @@ var TILE_TEXT = {
             "<p>1, 2, 3</p>"
     },
     2: {
-        "title": "Do you need to find a doctor?",
+        "title": "Do you have a place to sleep that you call home?",
         "content": "General info and link to other pages (i.e. profile pages in the database)"
     },
     3: {
-        "title": "Have a toothache?",
+        "title": "Are you sick? / Do you need to see a doctor?",
         "content": "asdf"
     },
     4: {
-        "title": "Is your vision OK?",
+        "title": "Do you need a lawyer?",
         "content": "asdf"
     },
     5: {
-        "title": "Lorem Ipsum 1?",
+        "Does your family struggle to pay for your food/housing/clothes/etc?",
         "content": "asdf"
     },
     6: {
-        "title": "Lorem Ipsum 2?",
+        "title": "Do you need clothing?",
         "content": "asdf"
     },
     7: {
-        "title": "Lorem Ipsum 3?",
+        "title": "Do you need a place to go before or after school?",
         "content": "asdf"
     },
     8: {
-        "title": "Lorem Ipsum 4?",
+        "title": "Are you a refugee?",
         "content": "asdf"
     },
     9: {
-        "title": "Lorem Ipsum 5?",
+        "title": "Is someone in your family struggling to find work?",
         "content": "asdf"
     },
     10: {
-        "title": "Lorem Ipsum 6?",
+        "title": "Do you need something to do / somewhere to go this summer?",
         "content": "asdf"
     },
-    11: {
-        "title": "Lorem Ipsum 7?",
-        "content": "asdf"
-    },
-    12: {
-        "title": "Lorem Ipsum 8?",
-        "content": "asdf"
-    },
-    13: {
-        "title": "Lorem Ipsum 9?",
-        "content": "asdf"
-    }
 };
 
 // templates in JSON matching the predefined selections you can
