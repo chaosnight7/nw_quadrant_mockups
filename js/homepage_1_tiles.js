@@ -8,7 +8,7 @@ var TILE_IDS =
 //  the last ones won't display, too few and an error will throw.
 var TILE_TEXT = {
     0: {
-        "title": "NW-Project Questionaire"",
+        "title": "NW-Project Questionaire",
         "content": "asdf <strong>this is bold</strong>"
     },
     1: {
@@ -67,7 +67,7 @@ var TILE_TEXT = {
         "content": "asdf"
     },
     5: {
-        "Does your family struggle to pay for your food/housing/clothes/etc?",
+        "title": "Does your family struggle to pay for your food/housing/clothes/etc?",
         "content": "asdf"
     },
     6: {
@@ -100,25 +100,24 @@ var TemplateRows = [
         " B B B ",
         " C D D ",
         " C D D ",
-        " F F . ",
-        " . G G ",
+        " F F G ",
+        " F F G ",
         " H H I ",
         " H H I ",
         " J K K ",
-        " J L L "
     ], [
         " A A B B ",
         " A A C C ",
-        " . . . . ",
+        " H H H . ",
         " D E E E ",
         " D F F . ",
-        " G G . . "
+        " G G G . "
     ], [
         " A A B B B ",
         " A A B B B ",
-        " A A . . . ",
+        " A A G G . ",
         " . C C D D ",
-        " E . . D D ",
+        " E C C D D ",
         " E . . F F "
     ]
 ];
